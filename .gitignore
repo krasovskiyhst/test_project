@@ -1,0 +1,9 @@
+db.sqlite3
+db.sqlite3-journal
+.idea/
+redis/
+venv/
+production_settings.py
+local_settings.py
+logs/
+logging_app/migrations/
