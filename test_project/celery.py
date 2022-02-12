@@ -12,6 +12,6 @@ app.autodiscover_tasks()
 app.conf.beat_schedule = {
     'get_data_and_save_api_on_a_schedule': {
         'task': 'logging_app.tasks.parsing_logs',
-        'schedule': crontab(minute=0, hour=2),
+        'schedule': crontab(minute=1),
     },
 }
