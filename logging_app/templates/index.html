@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Logging App</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static './index.css' %}" />
 </head>
 <body>
     <h1>Logging App</h1>
-
+    <table  width = 100%>
+        <tr>
+            <th>IP</th>
+            <th>DATE</th>
+            <th>METHOD</th>
+            <th>STATUS</th>
+            <th>DATA_TRANSFER</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.ip }}</td>
+            <td>{{ log.date }}</td>
+            <td>{{ log.request_method }}</td>
+            <td>{{ log.code_status }}</td>
+            <td>{{ log.data_transfer }}</td>
+        </tr>
+        {% empty %}
+    </table>
+    {% endfor %}
 </body>
 </html>

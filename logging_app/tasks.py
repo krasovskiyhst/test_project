@@ -1,11 +1,8 @@
-# from test_project.celery import app
-# import re
 from datetime import datetime
 from .models import AccessLogs
 from django.conf import settings
 
 
-# @app.task()
 def parsing_logs():
     def log_line_parsing(line):
         """ Разбор строки """

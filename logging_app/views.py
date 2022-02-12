@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from .tasks import parsing_logs
+from .models import AccessLogs
+from django.contrib.auth.decorators import login_required
 
 
-# @login_required
+@login_required
 def index(request):
-    parsing_logs()
-    return render(request, 'index.html')
+    logs = AccessLogs.objects.all()
+    context = {'logs': logs}
+    return render(request, 'index.html', context)
