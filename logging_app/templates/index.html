@@ -4,28 +4,45 @@
     <meta charset="UTF-8">
     <title>Logging App</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static './index.css' %}" />
+    <link rel="stylesheet" href="{% static './index.css' %}"/>
 </head>
 <body>
-    <h1>Logging App</h1>
-    <table  width = 100%>
-        <tr>
-            <th>IP</th>
-            <th>DATE</th>
-            <th>METHOD</th>
-            <th>STATUS</th>
-            <th>DATA_TRANSFER</th>
-        </tr>
-        {% for log in logs %}
-        <tr>
-            <td>{{ log.ip }}</td>
-            <td>{{ log.date }}</td>
-            <td>{{ log.request_method }}</td>
-            <td>{{ log.code_status }}</td>
-            <td>{{ log.data_transfer }}</td>
-        </tr>
-        {% empty %}
-    </table>
-    {% endfor %}
+<header>
+    <nav style="float: right">
+        <a href="{% url 'logout' %}">Выход</a>
+    </nav>
+</header>
+<h1>Logging App</h1>
+<div class="forms">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ ip_form }}
+        <input type="submit" value="Submit">
+    </form>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ date_form }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<table width=100%>
+    <tr>
+        <th>IP</th>
+        <th>DATE</th>
+        <th>METHOD</th>
+        <th>STATUS</th>
+        <th>DATA_TRANSFER</th>
+    </tr>
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.ip }}</td>
+        <td>{{ log.date }}</td>
+        <td>{{ log.request_method }}</td>
+        <td>{{ log.code_status }}</td>
+        <td>{{ log.data_transfer }}</td>
+    </tr>
+    {% empty %}
+</table>
+{% endfor %}
 </body>
 </html>
