@@ -1,7 +1,7 @@
 from datetime import datetime
 from .models import AccessLogs
 from django.conf import settings
-from .celery import app
+from test_project.celery import app
 
 
 @app.task()
