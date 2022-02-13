@@ -1,0 +1,77 @@
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/roboto.eot);
+}
+tr:nth-child(odd){
+    background:#f0f0f3;
+}
+tr:nth-child(even){
+    background:#dfdaf0;
+}
+
+body{
+    background-color: #f0f0f3;
+    padding: 0 60px;
+}
+
+h1 {
+    font-weight:bold;
+    text-transform: uppercase; /* Заглавные буквы */
+    font-size: 60px;
+    color: #434343;
+    font-family: Roboto;
+}
+
+tr, label{
+    color: #434343;
+    height: 36px;
+    font-family: Roboto;
+}
+a{
+    color:#2da44e;
+    font-family: Roboto;
+}
+
+INPUT:focus {
+    border: 1px solid #2da44e;
+    outline: none;
+    placeholder:
+
+    webkit-input-placeholder { color:#f00; }
+    moz-placeholder { color:#f00; } /* firefox 19+ */
+    ms-input-placeholder { color:#f00; } /* ie */
+    input:-moz-placeholder { color:#f00; }
+}
+
+input{
+	width: 170px;
+	font-size: 14px;
+	padding: 8px 10px;
+	border: 1px solid #cecece;
+	background: #fff;
+	border-radius: 40px;
+	font-family: Roboto;
+}
+
+input[type="submit"]{
+    width: 200px;
+	font-size: 14px;
+	padding: 8px 10px;
+	border: 1px solid #cecece;
+    border-radius: 40px;
+    background-color: #2da44e;
+    color: white;
+    font-family: Roboto;
+}
+
+.block-center{
+    text-align: center;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center
+}
+
+.forms form{
+    margin-right: 50px;
+    display: inline-block;
+}
