@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .models import AccessLogs
 from .forms import DateForm, IPForm
 from django.contrib.auth.decorators import login_required
-from .tasks import parsing_logs
 from django.contrib.auth import logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse

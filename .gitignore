@@ -8,4 +8,4 @@ local_settings.py
 logs/
 logging_app/migrations/
 **/__pycache__
-static/
+/static
