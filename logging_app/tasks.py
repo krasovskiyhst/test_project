@@ -6,6 +6,8 @@ from test_project.celery import app
 
 @app.task()
 def parsing_logs():
+    """ Парсинга файла с логами, запись данных в базу данных. По расписанию. """
+
     def log_line_parsing(line):
         """ Разбор строки """
         split_line = line.split()

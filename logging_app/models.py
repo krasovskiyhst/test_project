@@ -9,4 +9,4 @@ class AccessLogs (models.Model):
     data_transfer = models.IntegerField(default=0)
 
     def __str__(self):
-        return str(self.ip) + str(self.date) + str(self.request_method) + str(self.code_status) + str(self.data_transfer)
+        return self.ip

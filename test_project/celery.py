@@ -8,7 +8,6 @@ app = Celery('logging_app')
 app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()
 
-
 app.conf.beat_schedule = {
     'get_data_and_save_api_on_a_schedule': {
         'task': 'logging_app.tasks.parsing_logs',
