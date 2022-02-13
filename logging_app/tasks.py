@@ -1,8 +1,10 @@
 from datetime import datetime
 from .models import AccessLogs
 from django.conf import settings
+from .celery import app
 
 
+@app.task()
 def parsing_logs():
     def log_line_parsing(line):
         """ Разбор строки """
