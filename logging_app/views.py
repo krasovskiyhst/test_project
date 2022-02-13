@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from rest_framework import viewsets
+from .serializers import AccessLogsSerializer
 
 
 @login_required
@@ -31,3 +33,17 @@ def index(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse('home'))
+
+
+class AccessLogsViewSet(viewsets.ModelViewSet):
+    queryset = AccessLogs.objects.all()
+    serializer_class = AccessLogsSerializer
+    date_from_url_kwarg = 'date_from'
+    date_to_url_kwarg = 'date_to'
+
+    def get_queryset(self):
+        date_from = self.request.query_params.get(self.date_from_url_kwarg)
+        date_to = self.request.query_params.get(self.date_to_url_kwarg)
+        if date_from and date_to:
+            return AccessLogs.objects.filter(date__range=[date_from, date_to])
+        return AccessLogs.objects.all()
