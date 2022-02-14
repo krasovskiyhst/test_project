@@ -107,6 +107,8 @@ python manage.py createsuperuser # Если нужно
 
 deactivate
 
+sudo mkdir /logs
+
 
 УСТАНОВКА И НАСТРОЙКА REDIS
 -----------
