@@ -64,6 +64,7 @@ pip install -r test_project/requirements.txt
 
 Создаём файл настроек на сервере
 -----------
+cd test_project
 cat > test_project/production_settings.py
 
 *Содержимое файла:*
